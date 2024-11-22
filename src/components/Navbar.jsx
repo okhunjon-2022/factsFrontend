@@ -47,11 +47,7 @@ const Navbar = ({ changeLang }) => {
     <header className="bg-white py-6 border">
       <nav className="container mx-auto flex justify-between px-5">
         <Link href="/" className="flex items-center">
-          <img
-            className=" rounded-full size-14"
-            src={logo}
-            alt=""
-          />
+          <img className=" rounded-full size-14" src={logo} alt="" />
         </Link>
         <form className="hidden sm:flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-lg w-1/3">
           <BiSearch className="text-gray-500 size-5" />
@@ -143,6 +139,32 @@ const Navbar = ({ changeLang }) => {
           <li className="px-4 mt-5">
             <NavLink to="/login">Login</NavLink>
           </li>
+          {user && user.role === "admin" && (
+            <li className="flex items-center gap-3">
+              <img src={avatar} alt="" className="size-8" />
+              <Link to="/dashboard">
+                <button className="bg-[#1E73BE] px-4 py-1.5 text-white rounded-lg">
+                  Dashboard
+                </button>
+              </Link>
+            </li>
+          )}
+          {user && user.role === "user" ? (
+            <li className="flex items-center gap-3">
+              <img src={avatar} alt="" className="size-8" />
+
+              <button
+                onClick={handleLogout}
+                className="bg-[#1E73BE] px-4 py-1.5 text-white rounded-lg"
+              >
+                Logout
+              </button>
+            </li>
+          ) : (
+            <li>
+              <NavLink to="/login">{t("login")}</NavLink>
+            </li>
+          )}
         </ul>
       )}
     </header>
