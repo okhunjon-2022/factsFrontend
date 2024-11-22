@@ -149,22 +149,6 @@ const Navbar = ({ changeLang }) => {
               </Link>
             </li>
           )}
-          {user && user.role === "user" ? (
-            <li className="flex items-center gap-3">
-              <img src={avatar} alt="" className="size-8" />
-
-              <button
-                onClick={handleLogout}
-                className="bg-[#1E73BE] px-4 py-1.5 text-white rounded-lg"
-              >
-                Logout
-              </button>
-            </li>
-          ) : (
-            <li>
-              <NavLink to="/login">{t("login")}</NavLink>
-            </li>
-          )}
         </ul>
       )}
     </header>
