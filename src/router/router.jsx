@@ -6,7 +6,7 @@ import ContactUs from "../pages/ContactUs";
 import SingleBlog from "../pages/SingleBlog";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import AdminLayout from "../pages/admin/adminLayout";
+import AdminLayout from "../pages/admin/AdminLayout";
 import Dashboard from "../pages/admin/dashboard/Dashboard";
 import AddPost from "../pages/admin/post/AddPost";
 import ManagePost from "../pages/admin/post/ManagePost";
