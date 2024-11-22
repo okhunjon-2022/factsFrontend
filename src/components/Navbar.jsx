@@ -137,9 +137,7 @@ const Navbar = ({ changeLang }) => {
             </li>
           ))}
 
-          <li className="px-4 mt-5">
-            <NavLink to="/login">Login</NavLink>
-          </li>
+          
           {user && user.role === "user" ? (
             <li className="flex items-center gap-3 px-4 mt-5">
               <button
